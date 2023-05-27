@@ -11,8 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function FunctionName(Type $var = null)
-    {
-        # code...
-    }
+    
 }
