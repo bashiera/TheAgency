@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+        // one category belongs to many posts on portofolio
+    public function portfolio()
+    {
+        return $this->hasMany(Portfolio::class);
+    }
+    public function pricing()
+    {
+        return $this->belongsToMany(Pricing::class);
+    }
+
+
 }

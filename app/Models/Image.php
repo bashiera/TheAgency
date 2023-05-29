@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+    //the one image is belong to one post but one post maybe has many images
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+    public function portfolio()
+    {
+        return $this->belongsTo(Portfolio::class);
+    }
 }

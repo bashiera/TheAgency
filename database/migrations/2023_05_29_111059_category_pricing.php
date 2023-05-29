@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('requests', function (Blueprint $table) {
-            $table->id();
-            $table->string('email');
-            $table->string('name');
-            $table->string('description');
-            $table->string('phoneNumer');
-            $table->string('company_name');
+        Schema::create('category_pricing', function (Blueprint $table) {
+            $table->foreignId('category_id');
             $table->foreignId('pricing_id');
-            $table->timestamps();
         });
     }
 
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('requests');
+        //
     }
 };
