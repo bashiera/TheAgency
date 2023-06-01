@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('main_title');
+            $table->string('title');
             $table->string('subtitle');
-            $table->string('script');
+            $table->text('contant');
+            $table->string("slug");
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

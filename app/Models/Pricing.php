@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pricing extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'description',
+        'period',
+        "price",
+
+    ];
+
     public function category_pricing()
     {
         return $this->BelongsToMany(Category::class);

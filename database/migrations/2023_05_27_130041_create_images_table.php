@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('post_id')->unsigned()->nullable();
+            $table->foreign('post_id')->references('id')->on('posts')->onUpdate('cascade')->onDelete('cascade');
             $table->string('image_file_path');
             $table->timestamps();
         });

@@ -8,6 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Portfolio extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title',
+        'description',
+        'link',
+        "image",
+        "category_id",
+        "admin_id"
+
+    ];
+
 
     //one post on portofolio has only one category
 

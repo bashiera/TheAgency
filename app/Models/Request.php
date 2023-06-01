@@ -9,6 +9,15 @@ class Request extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'fname',
+        'email',
+        'phoneNumer',
+        "company_name",
+        "pricing_id",
+
+    ];
+
     public function pricing()
     {
         return $this->belongsTo(pricing::class);

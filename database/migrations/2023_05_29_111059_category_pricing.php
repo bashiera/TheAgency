@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('category_pricing', function (Blueprint $table) {
             $table->foreignId('category_id');
             $table->foreignId('pricing_id');
+
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('pricing_id')->references('id')->on('pricings')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

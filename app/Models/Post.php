@@ -9,6 +9,18 @@ class Post extends Model
 {
     use HasFactory;
 
+
+
+    protected $fillable = [
+        'title',
+        'subtitle',
+        'content',
+        "slug",
+        "admin_id",
+
+
+    ];
+
         //many post maybe have the same tags
         public function tags()
         {
