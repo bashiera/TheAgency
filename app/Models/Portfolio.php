@@ -14,7 +14,7 @@ class Portfolio extends Model
         'link',
         "image",
         "category_id",
-        "admin_id"
+        "user_id"
 
     ];
 
@@ -29,6 +29,11 @@ class Portfolio extends Model
     public function image()
     {
         return $this->hasOne(Image::class);
+    }
+
+    public function admin()
+    {
+        return $this->belongsTo(User::class);
     }
 
 

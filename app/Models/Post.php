@@ -33,6 +33,11 @@ class Post extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function admin()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 
 
 }

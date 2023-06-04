@@ -16,7 +16,7 @@ class Pricing extends Model
 
     ];
 
-    public function category_pricing()
+    public function categories()
     {
         return $this->BelongsToMany(Category::class);
     }
@@ -24,6 +24,11 @@ class Pricing extends Model
     public function request()
     {
         return $this->hasMany(Request::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
 }

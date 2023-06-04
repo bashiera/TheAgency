@@ -13,13 +13,17 @@ class Request extends Model
         'fname',
         'email',
         'phoneNumer',
-        "company_name",
-        "pricing_id",
+        'company_name',
+        'pricing_id',
 
     ];
 
     public function pricing()
     {
         return $this->belongsTo(pricing::class);
+    }
+    public function admin()
+    {
+        return $this->belongsTo(User::class);
     }
 }

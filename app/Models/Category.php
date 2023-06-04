@@ -17,7 +17,7 @@ class Category extends Model
 
 
         // one category belongs to many posts on portofolio
-    public function portfolio()
+    public function portfolios()
     {
         return $this->hasMany(Portfolio::class);
     }
