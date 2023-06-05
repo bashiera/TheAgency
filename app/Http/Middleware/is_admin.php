@@ -16,12 +16,13 @@ class is_admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->check()) {
+        if (auth()->check())
+            {
             $user = auth()->user();
             if ($user->is_admin == true) {
                 return $next($request);
             }
-        }
+            }
         return abort(403);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SubscriptionsController;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
@@ -23,4 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::resource('portfolios', PortfolioController::class);
 Route::post('subscrip', [SubscriptionsController::class, 'store']);
-Route::resource('request', Controller::class,);
+Route::resource('request', RequestController::class,);
+Route::resource('admins', UserController::class);
